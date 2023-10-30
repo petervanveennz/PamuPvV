@@ -14,6 +14,20 @@ steps:
       metadata:
         appliedNodeTests: []
         columns:
+          - columnReference:
+              columnCounter: f1fd1ffd-6baf-4cfc-8a3d-a1bee89f7a37
+              stepCounter: 6aff4b1b-1779-4380-857d-5c95c4fc4a35
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: DIM_CUSTOMER_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: f6766313-ccf9-4fae-8f55-3069d48cf3db
+                    stepCounter: 623ed547-8e94-438f-8bc6-05e58859b210
+                transform: ""
           - acceptedValues:
               strictMatch: true
               values: []
@@ -47,20 +61,6 @@ steps:
             sourceColumnReferences:
               - columnReferences:
                   - columnCounter: 54e3fd64-00bf-438f-a80b-e3d1b0856201
-                    stepCounter: 623ed547-8e94-438f-8bc6-05e58859b210
-                transform: ""
-          - columnReference:
-              columnCounter: f1fd1ffd-6baf-4cfc-8a3d-a1bee89f7a37
-              stepCounter: 6aff4b1b-1779-4380-857d-5c95c4fc4a35
-            dataType: NUMBER
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: DIM_CUSTOMER_KEY
-            nullable: true
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: f6766313-ccf9-4fae-8f55-3069d48cf3db
                     stepCounter: 623ed547-8e94-438f-8bc6-05e58859b210
                 transform: ""
           - columnReference:
