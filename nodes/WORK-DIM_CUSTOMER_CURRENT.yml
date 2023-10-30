@@ -27,7 +27,7 @@ steps:
             description: ""
             hashColumns: []
             isSurrogateKey: true
-            name: DIM_CUSTOMER1_KEY
+            name: DIM_CUSTOMER_CURRENT_KEY
             nullable: true
             sourceColumnReferences:
               - columnReferences: []

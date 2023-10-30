@@ -28,6 +28,27 @@ steps:
                   - columnCounter: a155e1fd-4439-4435-8ee0-12c2718052ab
                     stepCounter: c7ac0a5b-a5f3-41f5-a80b-15894f842e4b
                 transform: ""
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 83d6f02e-53cd-45fb-8bea-97e9cdfe5e2c
+              stepCounter: 623ed547-8e94-438f-8bc6-05e58859b210
+            config: {}
+            dataType: NUMBER
+            defaultValue: ""
+            description: ""
+            keyColumnType: None
+            name: DIM_CUSTOMER_CURRENT_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 06a46897-7696-48f2-9b84-60cf85f0a9c3
+                    stepCounter: 076cc058-24c1-4251-bef8-fd20762b801f
+                transform: ""
+            systemColumnType: None
+            transform: ""
           - columnReference:
               columnCounter: 54e3fd64-00bf-438f-a80b-e3d1b0856201
               stepCounter: 623ed547-8e94-438f-8bc6-05e58859b210
@@ -467,6 +488,7 @@ steps:
         sourceMapping:
           - aliases:
               DIM_CUSTOMER: c7ac0a5b-a5f3-41f5-a80b-15894f842e4b
+              DIM_CUSTOMER_CURRENT: 076cc058-24c1-4251-bef8-fd20762b801f
               DIM_PART: 008bdf20-d004-4d83-8551-a9f8ed450bf2
               DIM_SUPPLIER: 9a91c1bf-b792-4c8b-9c15-d9c518885857
               STG_LINEITEM_ORDERS: 2964392e-9865-472c-a66d-8f82d7229901
@@ -476,6 +498,8 @@ steps:
             dependencies:
               - locationName: WORK
                 nodeName: DIM_CUSTOMER
+              - locationName: WORK
+                nodeName: DIM_CUSTOMER_CURRENT
               - locationName: WORK
                 nodeName: DIM_PART
               - locationName: WORK
@@ -487,6 +511,9 @@ steps:
             join:
               joinCondition: |-
                 FROM {{ ref('WORK', 'STG_LINEITEM_ORDERS') }} "STG_LINEITEM_ORDERS"
+                LEFT JOIN {{ ref('WORK', 'DIM_CUSTOMER_CURRENT') }} "DIM_CUSTOMER_CURRENT"
+                
+                ON "STG_LINEITEM_ORDERS"."O_CUSTKEY" = "DIM_CUSTOMER_CURRENT"."C_CUSTKEY"
                 
                 LEFT JOIN {{ ref('WORK', 'DIM_CUSTOMER') }} "DIM_CUSTOMER"
                 

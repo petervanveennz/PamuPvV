@@ -14,20 +14,27 @@ steps:
       metadata:
         appliedNodeTests: []
         columns:
-          - columnReference:
-              columnCounter: f1fd1ffd-6baf-4cfc-8a3d-a1bee89f7a37
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: d2d4ccfc-cf44-45f9-b9a1-2c4eb5c31169
               stepCounter: 6aff4b1b-1779-4380-857d-5c95c4fc4a35
+            config: {}
             dataType: NUMBER
+            defaultValue: ""
             description: ""
-            hashColumns: []
-            hashDetails: null
-            name: DIM_CUSTOMER_KEY
+            keyColumnType: None
+            name: DIM_CUSTOMER_CURRENT_KEY
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: f6766313-ccf9-4fae-8f55-3069d48cf3db
+                  - columnCounter: 83d6f02e-53cd-45fb-8bea-97e9cdfe5e2c
                     stepCounter: 623ed547-8e94-438f-8bc6-05e58859b210
                 transform: ""
+            systemColumnType: None
+            transform: ""
           - columnReference:
               columnCounter: 230d35ec-a167-47cb-8c93-746e21dd4e3e
               stepCounter: 6aff4b1b-1779-4380-857d-5c95c4fc4a35
@@ -40,6 +47,20 @@ steps:
             sourceColumnReferences:
               - columnReferences:
                   - columnCounter: 54e3fd64-00bf-438f-a80b-e3d1b0856201
+                    stepCounter: 623ed547-8e94-438f-8bc6-05e58859b210
+                transform: ""
+          - columnReference:
+              columnCounter: f1fd1ffd-6baf-4cfc-8a3d-a1bee89f7a37
+              stepCounter: 6aff4b1b-1779-4380-857d-5c95c4fc4a35
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: DIM_CUSTOMER_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: f6766313-ccf9-4fae-8f55-3069d48cf3db
                     stepCounter: 623ed547-8e94-438f-8bc6-05e58859b210
                 transform: ""
           - columnReference:
